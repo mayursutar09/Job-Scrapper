@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Locator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{static 'css/style.css' %}"
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center m-5" style="font-weight: 700;">Software Jobs Available in Pune</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Sr. No.</th>
+                    <th scope="col">Compony and Role</th>
+                    <th scope="col">Experience</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">locations</th>
+                    <th scope="col">Skills</th>
+                    <th scope="col">Static URL</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for i in data %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{i.title}}</td>
+                    <td>{{i.experience}}</td>
+                    <td>{{i.salary}}</td>
+                    <td>{{i.location}}</td>
+                    <td>{{i.skills}}</td>
+                    <td>{{i.URL}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
